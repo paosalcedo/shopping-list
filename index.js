@@ -19,11 +19,15 @@ function addItem(){
 }
 
 function toggleCheckItem(){
-
+    $('ul').on('click', '.shopping-item-toggle', function(e){
+        $(this).parents().siblings('span').toggleClass('shopping-item__checked');
+    });
 }
 
 function removeItem(){
-
+    $('ul').on('click', '.shopping-item-delete', function(e){
+        this.closest('li').remove();
+    });
 }
 
 $(addItem);
